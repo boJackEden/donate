@@ -1,0 +1,136 @@
+body {
+  letter-spacing: 0.5px;
+  font-family: sans-serif;
+}
+.outer-container{
+  margin: auto;
+  width: 450px;
+}
+.container {
+  width: 450px;
+  height: 493px;
+  border: 2px solid black;
+  margin: auto;
+  text-align: center;
+  padding: 20px;
+}
+.needed-message {
+  padding: 22px 0px;
+  font-size: 23px;
+  background-color: #424242;
+  color: white;
+  border-radius: 5px;
+}
+.triangle {
+  margin-left: 86%;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 10px 7px 0 7px;
+  border-color: #424242 transparent transparent transparent;
+}
+.progress-bar {
+  background-color: #f7f7f7;
+  margin-top: 5px;
+  height: 20px;
+  border: 2px solid #DCDCDC;
+}
+.completed {
+  background-color: #EF5F3C;
+  height: 100%;
+  width: 1%;
+  -webkit-transition: width 2s;
+  transition: width 1s;
+}
+.info-donate{
+  text-align: left;
+  color: #8b8b8b;
+  border: 2px solid #DCDCDC;
+  border-top: 0px;
+  padding: 20px 30px;
+  font-size: 20px;
+}
+.days-left span{
+  color: #EF5F3C;
+}
+.info {
+  margin-top: 30px;
+  line-height: 30px;
+  margin-bottom: 25px
+}
+.give #left input{
+  height: 91%;
+  width: 76%;
+  font-size: 26px;
+  border: none;
+  font-weight: bold;
+  padding-left: 7px;
+  padding-top: 1px;
+  display: inline-block;
+  vertical-align: middle;
+}
+.give #left .symbol{
+  margin-left: 13px;
+  display: inline-block;
+  vertical-align: middle;
+}
+.give #right{
+  float: right;
+  height: 70px;
+  background-color: #1CBC2C;
+  color: white;
+  width: 47%;
+}
+.give #right:hover{
+  cursor: pointer;
+  background-color: #179024;
+}
+.give .input {
+  font-weight: bold;
+  font-size: 25px;
+  border: 2px solid #DCDCDC;
+  width: 46%;
+  height: 66px;
+  border-radius: 5px;
+  display: inline-block;
+  vertical-align: middle;
+}
+.why-give {
+  margin-top: 14px;
+  color: #1C9FD3;
+  font-size: 18px;
+  font-weight: 300;
+}
+.why-give:hover{
+  text-decoration: underline;
+  cursor: pointer;
+}
+.why-give-info{
+  position: absolute;
+  width: 450px;
+}
+button.save-for-later, button.tell-friends{
+  margin-top: 10px;
+  width: 47%;
+  float: left;
+  border: 2px solid #DCDCDC;
+  background-color: white;
+  color: #8b8b8b;
+  border-radius: 5px;
+  font-size: 20px;
+  padding: 16px;
+}
+button.save-for-later:hover, button.tell-friends:hover {
+  cursor: pointer;
+  background-color: #ebebeb;
+}
+
+button.save-for-later,
+.give #left input,
+.give #right,
+button.tell-friends:focus {
+  outline: none;
+}
+button.tell-friends{
+  float: right;
+}
