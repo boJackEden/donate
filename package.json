@@ -1,14 +1,8 @@
 {
   "name": "donate",
-  "version": "0.0",
+  "version": "0.0.1",
   "description": "Code challenge for StormPath",
-  "engines": {
-    "node": "5.9.1"
-  },
-  "main": "donate.js",
-  "scripts": {
-    "start": "node index.js"
-  },
+  "main": "donate.html",
   "dependencies": {
     "angular": "1.5.8",
     "sweetalert": "1.1.3",
