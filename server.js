@@ -13,7 +13,7 @@ app.get('/', function(req, res) {
 var project = {
   amountContributed: 200,
   target: 668,
-  remaining: 448,
+  remaining: 468,
   daysLeft: 3,
   contributors: 42
 };
@@ -37,7 +37,7 @@ function init (req, res) {
 }
 
 function reset (req, res) {
-  project.remaining = 448;
+  project.remaining = 468;
   project.amountContributed = 200;
   project.contributors = 42;
   res.send(project);
