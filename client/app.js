@@ -7,13 +7,4 @@ app.controller('DonateController', function() {
   this.contributors = 42;
   var pixelFill = Math.round((this.totalContibuted / 668) * 448);
   $('.completed').width(pixelFill);
-    // var $bar = $('.completed');
-    // function completeBar () {
-    //   var width = $bar.width();
-    //   if (width < pixelFill) {
-    //     $bar.width(width + 2);
-    //     setTimeout(function(){completeBar();},1);
-    //   }
-    // }
-    // completeBar();
 });
