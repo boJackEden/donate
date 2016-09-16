@@ -191,8 +191,8 @@ button.tell-friends{
     width: 200px;
     text-align: center;
     margin-left: -19px;
-    -webkit-padding-top: 6px;
-    -webkit-height: 26px;
+    padding-top: 6px;
+    height: 26px;
   }
   .give #right{
     width: 100%;
