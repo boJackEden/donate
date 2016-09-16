@@ -58,6 +58,6 @@ app.controller('DonateController', function($http) {
     console.log('errrrrrorrr');
   }
 
-  console.log('Hey Robert, I hope you enjoy this little app.\nYou can click "RESET" to reset the server and bring everything back to 0.\nWhile trying to remember how to spin up an express server I found this:\nhttps://www.youtube.com/watch?v=XvoJ1eqRRag\nThat\'s you!');
+  console.log('Hey Robert, I hope you enjoy this little app.\nYou can click "RESET" to reset the server and bring everything back to OG settings.\nWhile trying to remember how to spin up an express server I found this:\nhttps://www.youtube.com/watch?v=XvoJ1eqRRag\nThat\'s you!');
 
 });
