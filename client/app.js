@@ -35,7 +35,7 @@ app.controller('DonateController', function($http) {
     if (amount > 614) {
       triangleMarg = 96;
     }
-    if ( amount > 668 ) {
+    if ( amount > 667 ) {
       pixelFill = 100;
       swal({
         title: "CONGA-RATS! THANKS FOR THE CASH!",
