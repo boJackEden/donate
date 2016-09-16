@@ -1,11 +1,15 @@
 # Donate to Me
 
-This repo contains many node_modeule dependencies. In order to run a local version of this app;
+### Code challenge for storm path.  
+======
+#### How to get up and running locally:
 
-..* clone down repo
-..* navigate to file in terminal
-..* run ```npm install```.
+  * clone down repo
+  * navigate to repo in terminal
+  * run ```npm install```
 
 This will install all dependencies needed for the app.
 
-Code challenge for storm path.  
+======
+A live version of this repo is running on Heroku and can be accessed [here](https://stormy-caverns-60091.herokuapp.com/)
+
