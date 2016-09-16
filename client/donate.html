@@ -13,7 +13,7 @@
   </head>
   <body>
     <div class="container" ng-controller="DonateController as donate">
-      <div class="needed-message">{{donate.stillNeeded | currency}} still needed for this project</div>
+      <div class="needed-message">{{donate.remaining | currency}} still needed for this project</div>
       <div class="triangle"></div>
       <div class="progress-bar">
         <div class="completed"></div>
@@ -32,8 +32,8 @@
       <button class="save-for-later">Save for later</button>
       <button class="tell-friends"  id="shareBtn">Tell your friends</button>
     </div>
-    <div>
-      {{donate.project}}
+    <div class="reset">
+      RESET
     </div>
   </body>
   <!-- <script src="https://www.gstatic.com/firebasejs/3.4.0/firebase.js"></script>

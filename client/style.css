@@ -1,6 +1,7 @@
 body {
   letter-spacing: 0.5px;
   font-family: sans-serif;
+  text-align: center;
 }
 .outer-container{
   margin: auto;
@@ -22,12 +23,14 @@ body {
   border-radius: 5px;
 }
 .triangle {
-  margin-left: 86%;
+  margin-left: 96%;
   width: 0;
   height: 0;
   border-style: solid;
   border-width: 10px 7px 0 7px;
   border-color: #424242 transparent transparent transparent;
+  -webkit-transition: margin-left 2s;
+  transition: margin-left 1s;
 }
 .progress-bar {
   background-color: #f7f7f7;
@@ -38,7 +41,7 @@ body {
 .completed {
   background-color: #EF5F3C;
   height: 100%;
-  width: 1%;
+  width: 0%;
   -webkit-transition: width 2s;
   transition: width 1s;
 }
@@ -133,4 +136,14 @@ button.tell-friends:focus {
 }
 button.tell-friends{
   float: right;
+}
+.reset {
+  margin-top: 10px;
+}
+.reset:hover{
+  cursor: pointer;
+  text-decoration: underline;
+}
+.success{
+  background-color: #179024 !important;
 }

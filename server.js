@@ -11,16 +11,41 @@ app.get('/', function(req, res) {
 });
 
 var project = {
-  remaining: 167,
-  amountContributed: 501,
+  remaining: 668,
+  amountContributed: 0,
   target: 668,
   daysLeft: 3,
-  contributors: 42
+  contributors: 0
 };
 
-app.put('/project', function(req, res) {
+function adjustRemaining (req, res, next) {
+  var newAmount = parseFloat(req.body.amountContributed);
+  project.remaining = project.remaining - newAmount;
+  project.amountContributed = project.amountContributed + newAmount;
+  project.contributors = project.contributors + 1;
+  next();
+}
 
-});
+function sendBackAmounts (req, res, next) {
+  res.send(project);
+  res.end();
+}
+
+function init (req, res) {
+  res.send(project);
+  res.end();
+}
+
+function reset (req, res) {
+  project.remaining = 668;
+  project.amountContributed = 0;
+  project.contributors = 0;
+  res.send(project);
+  res.end();
+}
+app.put('/contribute', adjustRemaining, sendBackAmounts);
+app.get('/reset', reset);
+app.get('/init', init);
 
 app.listen(3000, function () {
   console.log('Example app listening on port 3000!');
