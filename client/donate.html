@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8">
     <link type="text/css" rel="stylesheet" href="style.css" />
-    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
-    <script src="../node_modules/sweetalert/dist/sweetalert.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="../node_modules/sweetalert/dist/sweetalert.css">
+    <script src="jquery/dist/jquery.min.js"></script>
+    <script src="sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="sweetalert/dist/sweetalert.css">
     <script src="functions.js"></script>
-    <script src="../node_modules/angular/angular.min.js"></script>
+    <script src="angular/angular.min.js"></script>
     <script type="text/javascript" src="app.js"></script>
     <title>Donate Now</title>
   </head>
@@ -31,6 +31,9 @@
       </div>
       <button class="save-for-later">Save for later</button>
       <button class="tell-friends"  id="shareBtn">Tell your friends</button>
+    </div>
+    <div>
+      {{donate.project}}
     </div>
   </body>
   <!-- <script src="https://www.gstatic.com/firebasejs/3.4.0/firebase.js"></script>

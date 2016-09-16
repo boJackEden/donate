@@ -12,13 +12,10 @@ $(document).ready(function(){
     var bookmarkTitle = document.title;
 
     if ('addToHomescreen' in window && window.addToHomescreen.isCompatible) {
-        // Mobile browsers
         addToHomescreen({ autostart: false, startDelay: 0 }).show(true);
     } else if (window.sidebar && window.sidebar.addPanel) {
-        // Firefox version < 23
         window.sidebar.addPanel(bookmarkTitle, bookmarkURL, '');
     } else if ((window.sidebar && /Firefox/i.test(navigator.userAgent)) || (window.opera && window.print)) {
-        // Firefox version >= 23 and Opera Hotlist
         $(this).attr({
             href: bookmarkURL,
             title: bookmarkTitle,
