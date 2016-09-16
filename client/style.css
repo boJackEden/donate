@@ -3,6 +3,9 @@ body {
   font-family: sans-serif;
   text-align: center;
 }
+input {
+  -webkit-appearance: none;
+}
 .outer-container{
   margin: auto;
   width: 450px;
@@ -23,13 +26,14 @@ body {
   border-radius: 5px;
 }
 .triangle {
+  background-color: transparent;
   margin-left: 96%;
   width: 0;
   height: 0;
   border-style: solid;
   border-width: 10px 7px 0 7px;
   border-color: #424242 transparent transparent transparent;
-  -webkit-transition: margin-left 2s;
+  -webkit-transition: margin-left 1s;
   transition: margin-left 1s;
 }
 .progress-bar {
@@ -42,7 +46,7 @@ body {
   background-color: #EF5F3C;
   height: 100%;
   width: 0%;
-  -webkit-transition: width 2s;
+  -webkit-transition: width 1s;
   transition: width 1s;
 }
 .info-donate{
@@ -187,6 +191,8 @@ button.tell-friends{
     width: 200px;
     text-align: center;
     margin-left: -19px;
+    -webkit-padding-top: 6px;
+    -webkit-height: 26px;
   }
   .give #right{
     width: 100%;
