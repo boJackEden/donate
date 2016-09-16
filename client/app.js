@@ -30,7 +30,6 @@ app.controller('DonateController', function($http) {
   });
 
   function changeFill (amount) {
-    console.log(amount);
     var pixelFill = Math.round((amount / 668) * 100);
     var triangleMarg = pixelFill + (100 - pixelFill)/2;
     if (amount > 614) {
