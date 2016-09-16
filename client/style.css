@@ -147,3 +147,56 @@ button.tell-friends{
 .success{
   background-color: #179024 !important;
 }
+
+@media(max-width: 508px) {
+  .container {
+    width: 318px;
+    height: 444px;
+    padding: 0px;
+    border: none;
+    margin: auto;
+  }
+  .needed-message{
+    font-size: 16px;
+  }
+  .triangle{
+    border-width: 5px 4px 0 4px;
+  }
+  .info-donate {
+    font-size: 16px;
+    padding: 20px 15px;
+    text-align: center;
+  }
+  .info{
+    margin-top: 15px;
+    line-height: 22px;
+    margin-bottom: 20px;
+  }
+  .give .input {
+    font-size: 17px;
+    width: 279px;
+    height: 40px;
+  }
+  .give #left .symbol {
+    float: left;
+    margin-top: 10px;
+  }
+  .give #left input {
+    width: 200px;
+    text-align: center;
+    margin-left: -19px;
+  }
+  .give #right{
+    width: 100%;
+    margin-top: 15px;
+    height: 46px;
+    margin-bottom: 15px;
+  }
+  .why-give{
+    font-size: 15px;
+  }
+  button.save-for-later, button.tell-friends{
+    font-size: 16px;
+    padding: 10px;
+  }
+}

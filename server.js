@@ -11,9 +11,9 @@ app.get('/', function(req, res) {
 });
 
 var project = {
-  remaining: 668,
-  amountContributed: 0,
+  amountContributed: 200,
   target: 668,
+  remaining: 448,
   daysLeft: 3,
   contributors: 0
 };
