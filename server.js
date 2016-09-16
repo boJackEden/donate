@@ -15,7 +15,7 @@ var project = {
   target: 668,
   remaining: 448,
   daysLeft: 3,
-  contributors: 0
+  contributors: 42
 };
 
 function adjustRemaining (req, res, next) {
@@ -37,9 +37,9 @@ function init (req, res) {
 }
 
 function reset (req, res) {
-  project.remaining = 668;
-  project.amountContributed = 0;
-  project.contributors = 0;
+  project.remaining = 448;
+  project.amountContributed = 200;
+  project.contributors = 42;
   res.send(project);
   res.end();
 }

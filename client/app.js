@@ -22,9 +22,9 @@ app.controller('DonateController', function($http) {
 
   $('.reset').on('click', function() {
     $http.get('/reset').then(function(resObj) {
-      vm.remaining = 668;
-      vm.amountContributed = 0;
-      vm.contributors = 0;
+      vm.remaining = resObj.data.remaining;
+      vm.amountContributed = resObj.data.amountContributed;
+      vm.contributors = resObj.data.contributors;
       changeFill(vm.amountContributed);
     }, errorCallback);
   });
