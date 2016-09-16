@@ -12,8 +12,12 @@ app.controller('DonateController', function($http) {
 
   $('#right').on('click', function() {
     var value = $('#left input').val();
-    var obj = { amountContributed: value };
-    $http.put('/contribute', obj).then(successCallback, errorCallback);
+    if(parseFloat(value) < 0){
+      sweetAlert("What do you think you're doing?", "You have to GIVE me money", "error");
+    } else {
+      var obj = { amountContributed: value };
+      $http.put('/contribute', obj).then(successCallback, errorCallback);
+    }
   });
 
   $('.reset').on('click', function() {
@@ -54,6 +58,6 @@ app.controller('DonateController', function($http) {
     console.log('errrrrrorrr');
   }
 
-  console.log('')
+  console.log('Hey');
 
 });
