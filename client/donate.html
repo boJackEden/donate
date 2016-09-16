@@ -13,6 +13,16 @@
     <title>Donate Now</title>
   </head>
   <body>
+
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.7&appId=184286685314823";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
     <div class="container" ng-controller="DonateController as donate">
       <div class="needed-message">{{donate.remaining | currency}} still needed for this project</div>
       <div class="triangle"></div>
@@ -36,17 +46,14 @@
     <div class="reset">
       RESET
     </div>
+    <script>
+      document.getElementById('shareBtn').onclick = function() {
+        FB.ui({
+          display: 'popup',
+          method: 'share',
+          href: 'https://stormy-caverns-60091.herokuapp.com/',
+        }, function(response){});
+      }
+    </script>
   </body>
-  <!-- <script src="https://www.gstatic.com/firebasejs/3.4.0/firebase.js"></script>
-  <script>
-    // Initialize Firebase
-    var config = {
-      apiKey: "AIzaSyBaxIUhIpoI0ZaSWmGAruqd-1CyC2b0ZUE",
-      authDomain: "donate-5e627.firebaseapp.com",
-      databaseURL: "https://donate-5e627.firebaseio.com",
-      storageBucket: "donate-5e627.appspot.com",
-      messagingSenderId: "232858422386"
-    };
-    firebase.initializeApp(config);
-  </script> -->
 </html>
