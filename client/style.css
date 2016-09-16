@@ -11,6 +11,10 @@ input ::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+input ::inner-spin-button,
+input ::outer-spin-button{
+  appearance: none;
+}
 .outer-container{
   margin: auto;
   width: 450px;
@@ -156,8 +160,44 @@ button.tell-friends{
 .success{
   background-color: #179024 !important;
 }
+a.twitter-share-button {
+  font-weight: bold;
+  font-size: 25px;
+  border: 2px solid #DCDCDC;
+  width: 46%;
+  border-radius: 5px;
+  display: inline-block;
+  vertical-align: middle;
+  background-color: #1B95E0;
+  color: white;
+  text-decoration: none;
+  padding: 7px 0px;
+}
+div#shareBtn {
+  font-weight: bold;
+  font-size: 25px;
+  border: 2px solid #DCDCDC;
+  width: 46%;
+  border-radius: 5px;
+  vertical-align: middle;
+  background-color: #2C4485;
+  color: white;
+  text-decoration: none;
+  padding: 7px 0px;
+  margin: auto;
+  margin-top: 10px;
+}
+div#shareBtn:hover {
+  cursor: pointer;
+}
 
 @media(max-width: 508px) {
+  div#shareBtn{
+    width: 75%;
+  }
+  a.twitter-share-button{
+    width: 75%;
+  }
   .container {
     width: 303px;
     height: 444px;

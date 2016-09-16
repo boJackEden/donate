@@ -42,19 +42,10 @@
         <div class="why-give"><i>Why give $50</i></div>
       </div>
       <button class="save-for-later">Save for later</button>
-      <button class="tell-friends"  id="shareBtn">Tell your friends</button>
+      <button class="tell-friends">Tell your friends</button>
     </div>
     <div class="reset">
       RESET
     </div>
-    <script>
-      document.getElementById('shareBtn').onclick = function() {
-        FB.ui({
-          display: 'popup',
-          method: 'share',
-          href: 'https://stormy-caverns-60091.herokuapp.com/',
-        }, function(response){});
-      }
-    </script>
   </body>
 </html>
