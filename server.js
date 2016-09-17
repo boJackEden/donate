@@ -8,7 +8,7 @@ var smtpConfig = {
     service: 'Gmail',
     auth: {
       user: 'bojackeden@gmail.com',
-      pass: 'Codeboy69'
+      pass: 'secret'
     }
 };
 var transporter = nodemailer.createTransport(smtpConfig);
