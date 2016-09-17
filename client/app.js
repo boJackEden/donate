@@ -2,6 +2,7 @@ var app = angular.module('giveMeMoney', []);
 
 app.controller('DonateController', function($http) {
   var vm = this;
+
   $http.get('/init').then(function(resObj) {
     vm.remaining = resObj.data.remaining;
     vm.amountContributed = resObj.data.amountContributed;
@@ -34,12 +35,12 @@ app.controller('DonateController', function($http) {
       animation: "slide-from-top",
       inputPlaceholder: "Email" },
       function(inputValue) {
-        $http.put('/email', {email: inputValue}).then(console.log('Een is cool'));
         if (inputValue === false) return false;
         if (inputValue === "") {
           swal.showInputError("You need to write something!");
           return false;
         }
+        $http.put('/email', {email: inputValue});
         swal("Nice!", "We'll send an email to: " + inputValue, "success");
       });
   });
@@ -51,6 +52,7 @@ app.controller('DonateController', function($http) {
         vm.amountContributed = resObj.data.amountContributed;
         vm.contributors = resObj.data.contributors;
         changeFill(vm.amountContributed);
+        $('#left input').val(50);
       }, errorCallback);
     }
   });

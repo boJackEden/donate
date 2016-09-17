@@ -1,4 +1,5 @@
 $(document).ready(function(){
+
   $('.tell-friends').on('click', function(){
     swal({
       title: 'Where would you like to share?',
@@ -7,7 +8,8 @@ $(document).ready(function(){
       'charset="utf-8"></script>',
       '<div id="shareBtn">FACEBOOK</div>'].join(''),
       html: true,
-      confirmButtonColor: '#1CBC2C'
+      showCancelButton: true,
+      showConfirmButton: false
     });
     document.getElementById('shareBtn').onclick = function() {
       FB.ui({
@@ -18,13 +20,10 @@ $(document).ready(function(){
     };
   });
 
-
-
   $('.why-give i').on('click', function(){
     swal({
       title: "Because I need the cash, ok?!",
       confirmButtonColor: "#1CBC2C"
     });
   });
-
 });
