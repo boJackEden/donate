@@ -11,22 +11,48 @@ app.controller('DonateController', function($http) {
   }, errorCallback);
 
   $('#right').on('click', function() {
+    $(this).attr('value', 'Thanks!');
     var value = $('#left input').val();
     if(parseFloat(value) < 0){
       sweetAlert("What do you think you're doing?", "You have to GIVE me money", "error");
     } else {
+      setTimeout(function(){
+        $('#right').attr('value', 'Give Now');
+      }, 2000);
       var obj = { amountContributed: value };
       $http.put('/contribute', obj).then(successCallback, errorCallback);
     }
   });
 
+  $('.save-for-later').on('click', function() {
+    swal({
+      title: "We'll remind you later",
+      text: "Give us your email and we'll send you over the link so you can donate later.",
+      type: "input",
+      showCancelButton: true,
+      closeOnConfirm: false,
+      animation: "slide-from-top",
+      inputPlaceholder: "Email" },
+      function(inputValue) {
+        $http.put('/email', {email: inputValue}).then(console.log('Een is cool'));
+        if (inputValue === false) return false;
+        if (inputValue === "") {
+          swal.showInputError("You need to write something!");
+          return false;
+        }
+        swal("Nice!", "We'll send an email to: " + inputValue, "success");
+      });
+  });
+
   $('.reset').on('click', function() {
-    $http.get('/reset').then(function(resObj) {
-      vm.remaining = resObj.data.remaining;
-      vm.amountContributed = resObj.data.amountContributed;
-      vm.contributors = resObj.data.contributors;
-      changeFill(vm.amountContributed);
-    }, errorCallback);
+    if(vm.amountContributed !== 200){
+      $http.get('/reset').then(function(resObj) {
+        vm.remaining = resObj.data.remaining;
+        vm.amountContributed = resObj.data.amountContributed;
+        vm.contributors = resObj.data.contributors;
+        changeFill(vm.amountContributed);
+      }, errorCallback);
+    }
   });
 
   function changeFill (amount) {

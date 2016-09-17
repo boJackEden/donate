@@ -2,6 +2,20 @@ var express = require('express');
 var app = express();
 var path = require('path');
 var bodyParser = require('body-parser');
+var nodemailer = require('nodemailer');
+
+
+// create reusable transporter object using the default SMTP transport
+var smtpConfig = {
+    service: 'Gmail',
+    auth: {
+      user: 'bojackeden@gmail.com',
+      pass: 'something'
+    }
+};
+var transporter = nodemailer.createTransport(smtpConfig);
+
+
 
 app.use(bodyParser.json());
 app.use(express.static(__dirname + '/client'));
@@ -43,7 +57,26 @@ function reset (req, res) {
   res.send(project);
   res.end();
 }
+
+function sendEmail(req, res, next) {
+  var email = req.body.email;
+  var mailOptions = {
+      from: '"Eden Mazzola" <mazzolaeden@gmail.com.com>',
+      to: email,
+      subject: 'Hello ✔',
+      text: 'You said you wanted to remember the site, here it is: ',
+  };
+  // send mail with defined transport object
+  transporter.sendMail(mailOptions, function(error, info) {
+      if (error) {
+          return console.log(error);
+      }
+      console.log('Message sent: ' + info.response);
+  });
+}
+
 app.put('/contribute', adjustRemaining, sendBackAmounts);
+app.put('/email', sendEmail);
 app.get('/reset', reset);
 app.get('/init', init);
 
